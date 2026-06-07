@@ -27,4 +27,8 @@ export class App {
   decrease(){
     this.counterSvc.decCounter()
   }
+
+  reset(){
+    this.counterSvc.resetCounter()
+  }
 }
