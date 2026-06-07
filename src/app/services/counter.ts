@@ -16,4 +16,9 @@ export class Counter {
     decCounter(){
         this.counterSubject.next(--this.counter);
     }
+
+    resetCounter(){
+        this.counter = 0;
+        this.counterSubject.next(this.counter)
+    }
 }

@@ -5,7 +5,12 @@
     <span> {{counter_value}}</span>
   </div>
   <div class="button-container">
+    <div class="action-btns">
     <button (click)="increase()"> + </button>
     <button (click)="decrease()"> - </button>
+    </div>
+    <div class="reset-btn">
+      <button (click)="reset()">Reset counter</button>
+    </div>
   </div>
 </body>
