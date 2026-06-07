@@ -1,12 +1,30 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Counter } from './services/counter';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ngrx-tutorial');
+  protected readonly title = signal('NgRx tutorial');
+
+  counter_value: number | null = null
+
+  constructor(private counterSvc: Counter){}
+
+  ngOnInit(){
+    this.counterSvc.getValue().subscribe( (value: number) =>{
+      this.counter_value = value;
+    })
+  }
+
+  increase(){
+    this.counterSvc.incCounter();
+  }
+
+  decrease(){
+    this.counterSvc.decCounter()
+  }
 }

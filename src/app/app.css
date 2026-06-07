@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.button-container {
+  display: inline-flex;
+  justify-content: space-between;
+  button {
+    padding: 0.3rem;
+    min-width: 3rem;
+    margin: 5px;
+    font-size: larger;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    transition: all 500ms ease;
+    border: 0px;
+
+  }
+  button:hover{
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: brown;
+  }
+}
