@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Counter } from './services/counter';
+import { Store } from '@ngrx/store';
+import { decrement, increment, reset } from './store/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -12,23 +14,26 @@ export class App {
 
   counter_value: number | null = null
 
-  constructor(private counterSvc: Counter){}
+  constructor(private counterSvc: Counter, private store: Store){}
 
   ngOnInit(){
-    this.counterSvc.getValue().subscribe( (value: number) =>{
-      this.counter_value = value;
-    })
+    // this.counterSvc.getValue().subscribe( (value: number) =>{
+    //   this.counter_value = value;
+    // })
   }
 
   increase(){
-    this.counterSvc.incCounter();
+    // this.counterSvc.incCounter();
+    this.store.dispatch(increment())
   }
 
   decrease(){
-    this.counterSvc.decCounter()
+    // this.counterSvc.decCounter()
+    this.store.dispatch(decrement())
   }
 
   reset(){
-    this.counterSvc.resetCounter()
+    // this.counterSvc.resetCounter()
+    this.store.dispatch(reset())
   }
 }
