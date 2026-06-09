@@ -2,7 +2,7 @@
   <h2>{{title()}}</h2>
   <div class="counter">
     <span> Counter: </span>
-    <span> {{counter_value}}</span>
+    <span> {{counter$ | async}}</span>
   </div>
   <div class="button-container">
     <div class="action-btns">
