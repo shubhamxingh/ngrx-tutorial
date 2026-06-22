@@ -4,7 +4,7 @@ import { decrement, increment, reset } from './counter.actions';
 //Initial State
 export const initialState = 0;
 
-export const counterReducer = createReducer(
+export const reducer = createReducer(
   initialState,
 
   //on increment
